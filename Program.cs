@@ -9,8 +9,9 @@ namespace AdventOfCode2022
     internal class Program
     {
         static void Main(string[] args)
-        {            
-            Day3.Day3Part2();
+        {
+            Day4.Day4Part1();
+            Day4.Day4Part2();
         }
     }
 }
