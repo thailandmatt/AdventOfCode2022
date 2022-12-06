@@ -13,7 +13,8 @@ namespace AdventOfCode2022
             var fileLine = System.IO.File.ReadAllText("Day6.txt");
 
             int[] count = new int[26];
-            int x = 14;
+            //int x = 4; //part 1
+            int x = 14; //part 2
 
             for (int i = 0; i < x; i++)
             {
