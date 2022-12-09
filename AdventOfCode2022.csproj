@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Day1.cs" />
+    <Compile Include="Day9.cs" />
     <Compile Include="Day8.cs" />
     <Compile Include="Day7.cs" />
     <Compile Include="Day6.cs" />
@@ -58,6 +59,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Day9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Day8.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
