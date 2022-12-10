@@ -8,53 +8,6 @@ namespace AdventOfCode2022
 {
     internal class Day10
     {      
-        public static void Day10Part1Attemp1()
-        {
-            var fileLines = System.IO.File.ReadAllLines("Day10.txt");
-
-            int cycleNumber = 0;            
-            int curInstruction = 0;
-            bool onAddX = false;
-            List<int> registerValues = new List<int>();
-            int X = 1;
-
-            while (curInstruction < fileLines.Length)
-            {
-                cycleNumber++;
-
-                if (fileLines[curInstruction].StartsWith("addx"))
-                {
-                    if (onAddX)
-                    {
-                        //execute this one and reset
-                        X += int.Parse(fileLines[curInstruction].Replace("addx ", ""));
-                        onAddX = false;
-                        curInstruction++;
-                    }
-                    else
-                    {
-                        onAddX = true;
-                    }
-                }
-                else if (fileLines[curInstruction] == "noop")
-                {
-                    curInstruction++;
-                }
-
-                registerValues.Add(X);
-            }
-
-            int score = 0;
-            for (int i = 20; i <= 220; i = i + 40)
-            {
-                int q = (i * registerValues[i - 1]);
-                score += q;
-            }
-
-            Console.WriteLine("Part 1 - " + score);
-            Console.ReadLine();
-        }
-
         public static void Day10Part1()
         {
             var fileLines = System.IO.File.ReadAllLines("Day10.txt");
