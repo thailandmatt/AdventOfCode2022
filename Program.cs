@@ -10,7 +10,7 @@ namespace AdventOfCode2022
     {
         static void Main(string[] args)
         {
-            Day12.Day12Part1();
+            Day13.Day13Part1();
         }
     }
 }
