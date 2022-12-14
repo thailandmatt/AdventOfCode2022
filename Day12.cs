@@ -42,10 +42,18 @@ namespace AdventOfCode2022
                 }
             }
 
+            //write it out
+            for (int i = 0; i < fileLines.Length; i++)
+            {
+                WriteToConsole(i, 0, fileLines[i]);
+            }
+            Console.ReadLine();
+
             //Breadth first search
             List<(int, int)> steps = BreadthFirstSearchShortestPath(start, end, grid);
 
             Console.WriteLine("Part 1 - " + (steps.Count - 1));
+            Console.ReadLine();
 
             int min = int.MaxValue;
             foreach (var possibleStart in part2List)
@@ -109,12 +117,22 @@ namespace AdventOfCode2022
                             toCheck.Enqueue(adjacent);
                             visited.Add(adjacent);
                             childParentMap.Add(adjacent, cur);
+
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            WriteToConsole(adjacent.Item1, adjacent.Item2, "*");
+                            System.Threading.Thread.Sleep(5);
                         }
                     }
                 }
             }
 
             return new List<(int, int)>();
+        }
+
+        static void WriteToConsole(int row, int col, string s)
+        {
+            Console.SetCursorPosition(col, row);
+            Console.Write(s);
         }
 
     }
